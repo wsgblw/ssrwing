@@ -96,7 +96,6 @@ cd ..
 chown -R root:root *
 chmod -R 755 *
 chown -R www:www storage
-curl -sS https://getcomposer.org/installer | php
 php composer.phar install
 echo -e "${Info} 安装依赖已完成"
 sleep 1
