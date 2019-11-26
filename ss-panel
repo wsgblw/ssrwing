@@ -66,12 +66,12 @@ echo -e "${Info} 检测安装git、unzip、crontab工具已完成"
 sleep 1
 ##下载解压拷贝源码
 echo -e "${Info} 正在下载解压处理程序源码"
-wget -N --no-check-certificate "https://github.com/wsgblw/ssr/archive/master.zip"
+wget -N --no-check-certificate "https://github.com/wsgblw/ssr_wing/archive/master.zip"
 unzip master.zip
-cd ssr-master
+cd ssr_wing-master
 mv * .[^.]* /www/wwwroot/$website/
 cd ..
-rm -rf master.zip ssr-master/
+rm -rf master.zip ssr_wing-master/
 echo -e "${Info} 下载解压处理程序源码已完成"
 sleep 1
 ##处理php函数
@@ -96,6 +96,7 @@ cd ..
 chown -R root:root *
 chmod -R 755 *
 chown -R www:www storage
+curl -sS https://getcomposer.org/installer | php
 php composer.phar install
 echo -e "${Info} 安装依赖已完成"
 sleep 1
